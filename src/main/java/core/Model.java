@@ -22,6 +22,59 @@ public class Model
         importModel();
     }
 
+    /**
+     * Returns the student with the specified UID
+     *
+     * @param serachUID student UID
+     * @return Student object
+     */
+    public Student getStudent(int searchUID)
+    {
+        for (Student student : students) {
+            if (student.getUID() == searchUID) {
+                return student;
+            }
+        }
+        return null; // if a student is not found
+    }
+
+    /**
+     * Sets the student with the given UID to the updated information
+     * specified by the update student.
+     *
+     * @param searchUID uid of student
+     * @param updateStudent student with updated information
+     */
+    public void setStudent(int searchUID, Student updateStudent)
+    {
+        for (Student modelStudent : students) {
+            if (modelStudent.getUID() == searchUID) {
+                modelStudent.update(updateStudent);
+                break;
+            }
+        }
+    }
+
+    public Course getCourse(int searchUID)
+    {
+        return null;
+    }
+
+    public void setCourse(int searchUID, Course updateCourse)
+    {
+        
+    }
+
+    public Registration getRegistration(int searchUID)
+    {
+        return null; // if a registration is not found
+    }
+
+    public void setRegistration(int searchUID, Registration updateRegistration)
+    {
+
+    }
+
     public ArrayList<Student> getStudents() 
     {
         return this.students;
